@@ -4,19 +4,16 @@ document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady() {
 	imageLoc=navigator.camera.imageLoc;
 }
-
 function capturePhoto() {
-	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100,
+	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100,//For Highest quality image for purpose of clear images, as required by the app
 	imageLoc: imageLoc.DATA_URL });
 }
-	
 function onPhotoDataSuccess(imageData) {
 	var image = document.getElementById('image');
 	image.style.display = 'block';
 	image.src = "data:image/jpeg;base64," + imageData;
 }
-
-function onFail(message) {
+function fail(message) {
       alert('Failed because: ' + message);
 }
 
