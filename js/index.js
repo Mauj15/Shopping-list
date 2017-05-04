@@ -5,7 +5,7 @@ function onDeviceReady() {
 	imageLoc=navigator.camera.imageLoc;
 }
 function capturePhoto() {
-	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100,//For Highest quality image for purpose of clear images, as required by the app
+	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100,
 	imageLoc: imageLoc.DATA_URL });
 }
 function onPhotoDataSuccess(imageData) {
@@ -13,7 +13,7 @@ function onPhotoDataSuccess(imageData) {
 	image.style.display = 'block';
 	image.src = "data:image/jpeg;base64," + imageData;
 }
-function fail(message) {
+function onFail(message) {
       alert('Failed because: ' + message);
 }
 
